@@ -116,7 +116,7 @@ function App() {
           <button
             id='three'
             onClick={() => buttonPress('3')}
-            className='light-gray'
+            className='dark-gray'
           >
             3
           </button>
