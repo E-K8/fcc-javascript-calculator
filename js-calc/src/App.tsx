@@ -37,10 +37,46 @@ function App() {
       // if the last number already has a decimal, don't add another
       if (lastNumber?.includes('.')) return;
       setExpression(expression + symbol);
+    } else {
+      if (expression.charAt(0) === '0') {
+        setExpression(expression.slice(1) + symbol);
+      } else {
+        setExpression(expression + symbol);
+      }
     }
   };
 
-  const calculate = () => {};
+  const calculate = () => {
+    // if last character is an operator, do nothing
+    if (isOperator(et.charAt(et.length - 1))) return;
+    // clean the expression so that out of two operators in a row only the last one is used
+    const parts = et.split(' ');
+    const newParts = [];
+
+    // go through parts backwards
+    for (let i = parts.length - 1; i >= 0; i--) {
+      if (['*', '/', '+'].includes(parts[i]) && isOperator(parts[i - 1])) {
+        newParts.unshift(parts[i]);
+        let j = 0;
+        let k = i - 1;
+        while (isOperator(parts[k])) {
+          k--;
+          j++;
+        }
+        i -= j;
+      } else {
+        newParts.unshift(parts[i]);
+      }
+    }
+
+    const newExpression = newParts.join(' ');
+    if (isOperator(newExpression.charAt(0))) {
+      setAnswer(eval(answer + newExpression) as string);
+    } else {
+      setAnswer(eval(newExpression) as string);
+    }
+    setExpression('');
+  };
 
   return (
     <>
