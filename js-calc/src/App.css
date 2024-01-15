@@ -1,9 +1,9 @@
 :root {
   --white: white;
-  --light-gray: #f0f0f0;
-  --dark-gray: #6c6c6c;
-  --black: #1e1e1e;
-  --yellow: #f99c14;
+  --wine: #750e21;
+  --orange: #e3651d;
+  --black: #191919;
+  --green: #bed754;
 }
 
 .container {
@@ -31,18 +31,22 @@
   background-color: var(--black);
 }
 
-.light-gray {
-  background-color: var(--light-gray);
+.wine {
+  background-color: var(--wine);
+  color: white;
+  font-weight: bold;
 }
 
-.dark-gray {
-  background-color: var(--dark-gray);
+.orange {
+  background-color: var(--orange);
   color: white;
+  font-weight: bold;
 }
 
-.yellow {
-  background-color: var(--yellow);
-  color: white;
+.green {
+  background-color: var(--green);
+  color: black;
+  font-weight: bold;
 }
 
 button {
@@ -50,7 +54,7 @@ button {
   font-size: 24px;
   border: none;
   cursor: pointer;
-  border-radius: 100px;
+  border-radius: 30px;
   width: 100%;
   transition: transform 0.1s ease-in-out;
 }
@@ -62,12 +66,13 @@ button:active {
 #answer {
   font-size: 48px;
   height: 48px;
+  color: var(--orange);
 }
 
 #expression {
   font-size: 30px;
   height: 30px;
-  color: var(--dark-gray);
+  color: lightgreen;
 }
 
 #display {
