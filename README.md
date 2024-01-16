@@ -1,2 +1,10 @@
-# fcc-javascript-calculator
-A project built for the Front End Development Libraries certification from freeCodeCamp
+## JavaScript Calculator
+
+### [Task](task.md)
+
+#### [Demo](https://fcc-js-calc.netlify.app)
+
+To run locally:
+
+    npm i
+    npm run dev
