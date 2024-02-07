@@ -6,5 +6,6 @@
 
 To run locally:
 
+    cd js-calc
     npm i
     npm run dev
